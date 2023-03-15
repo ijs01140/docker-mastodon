@@ -1,0 +1,7 @@
+.env.production
+docker-compose.yml
+docker-compose.yml.*
+!docker-compose.yml.sample
+postgres*
+public
+redis
