@@ -56,7 +56,7 @@ services:
   #     - '127.0.0.1:9200:9200'
 
   web:
-    image: tootsuite/mastodon
+    image: ijs01140/mastodon:main
     restart: always
     env_file: .env.production
     command: bash -c "rm -f /mastodon/tmp/pids/server.pid; bundle exec rails s -p 3000"
@@ -78,7 +78,7 @@ services:
       - ./public/system:/mastodon/public/system
 
   streaming:
-    image: tootsuite/mastodon
+    image: ijs01140/mastodon:main
     restart: always
     env_file: .env.production
     command: node ./streaming
@@ -95,7 +95,7 @@ services:
       - redis
 
   sidekiq:
-    image: tootsuite/mastodon
+    image: ijs01140/mastodon:main
     restart: always
     env_file: .env.production
     command: bundle exec sidekiq
